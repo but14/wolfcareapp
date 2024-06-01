@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:wolfcareapp/mainScreen/main_screen.dart';
+import 'package:wolfcareapp/tabPages/login_tab.dart';
+import 'package:wolfcareapp/tabPages/register_tab.dart';
 
 class MySplashScreen extends StatefulWidget {
   const MySplashScreen({super.key});
@@ -16,7 +18,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
     Timer(const Duration(seconds: 5), () async
     {
       //send user to home screen
-      Navigator.push(context, MaterialPageRoute(builder: (c)=> MainScreen()));
+      Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginPage()));
     });
   }
 

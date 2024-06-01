@@ -11,7 +11,7 @@ class HomeTabPage extends StatefulWidget {
 class _HomeTabPageState extends State<HomeTabPage> {
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(10.776889, 106.700806);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
