@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:wolfcareapp/tabPages/pickup_tab.dart';
-import 'booking_tab.dart'; // Import the BookingPage
+import 'package:wolfcareapp/mainScreen/main_screen.dart';
+import 'home_tab.dart'; // Đảm bảo rằng bạn đã nhập đúng đường dẫn đến file home_tab.dart
 
-class HomeTabPage extends StatefulWidget {
-  const HomeTabPage({super.key});
-
+class ConfirmPickupPage extends StatefulWidget {
   @override
-  State<HomeTabPage> createState() => _HomeTabPageState();
+  _ConfirmPickupPageState createState() => _ConfirmPickupPageState();
 }
 
-class _HomeTabPageState extends State<HomeTabPage> {
+class _ConfirmPickupPageState extends State<ConfirmPickupPage> {
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(10.776889, 106.700806);
@@ -26,11 +24,11 @@ class _HomeTabPageState extends State<HomeTabPage> {
         backgroundColor: Color(0xffB81736),
         elevation: 0,
         title: Text(
-          'Chào mừng bạn đến với Wolf Care',
+          'Xác nhận điểm đón',
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
-        automaticallyImplyLeading: false, // Loại bỏ nút quay lại
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         children: [
@@ -62,44 +60,21 @@ class _HomeTabPageState extends State<HomeTabPage> {
                       ),
                     ),
                   ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ConfirmPickupPage()),
-                    );
-                  },
                 ),
                 SizedBox(height: 10),
-                TextField(
-                  style: TextStyle(fontSize: 24),
-                  decoration: InputDecoration(
-                    hintText: 'Điểm đến?',
-                    hintStyle: const TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 20),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                      borderSide: BorderSide.none,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                      borderSide: BorderSide.none,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                      borderSide: BorderSide(
-                        color: Color(0xffB81736),
-                        width: 2.0,
-                      ),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.push(
+                ElevatedButton(
+                  onPressed: () {
+                    // Xử lý xác nhận điểm đón
+                    Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => BookingPage()),
+                      MaterialPageRoute(builder: (context) => MainScreen()),
                     );
                   },
+                  child: Text("Xác nhận điểm đón"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xffB81736),
+                    foregroundColor: Colors.white,
+                  ),
                 ),
               ],
             ),
