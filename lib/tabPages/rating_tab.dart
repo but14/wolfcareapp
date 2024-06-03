@@ -54,7 +54,7 @@ class DriverRatingPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Xử lý đánh giá tài xế
-                // Ví dụ: Gửi đánh giá lên server
+
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Cảm ơn bạn đã đánh giá!')),
                 );
