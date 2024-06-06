@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:wolfcareapp/tabPages/pickup_tab.dart';
-import 'booking_tab.dart'; // Import the BookingPage
+import 'booking_tab.dart';
 
 class HomeTabPage extends StatefulWidget {
   const HomeTabPage({super.key});
